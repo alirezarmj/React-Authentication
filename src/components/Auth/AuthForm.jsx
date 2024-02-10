@@ -3,7 +3,7 @@ import { useContext, useRef, useState } from "react";
 import classes from "./AuthForm.module.css";
 import toast from "react-hot-toast";
 import { CgSpinner } from "react-icons/cg";
-import { AuthContext } from "../../store/Auth-Context";
+import { AuthContext } from "../../store/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {

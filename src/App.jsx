@@ -6,7 +6,7 @@ import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import { useContext } from "react";
-import { AuthContext } from "./store/Auth-Context";
+import { AuthContext } from "./store/AuthContext";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -18,7 +18,12 @@ function App() {
         {authCtx.isLoggedIn ? <Route path="/profile" element={<UserProfile />} /> : <Route path="/profile" element={<Navigate replace to="/auth" />} />}
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
-      <Toaster position="top-center" gutter={12} containerStyle={{ margin: "8px" }} toastOptions={{ success: { duration: 3000 }, error: { duration: 5000 }, style: { fontSize: "16px", maxWidth: "500px" } }} />
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{ success: { duration: 3000 }, error: { duration: 5000 }, style: { fontSize: "16px", maxWidth: "500px" } }}
+      />
     </Layout>
   );
 }
